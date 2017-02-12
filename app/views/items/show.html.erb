@@ -1,2 +1,24 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<div class="show-page">
+  <h2><%= @item.name %></h2>
+  <%= link_to '<i class="arrow left icon"></i>Items'.html_safe, items_path %>
+  <table id="index" class="ui red striped celled table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Updated</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tr>
+      <td><%= @item.item_type %></td>
+      <td><%= @item.item_description %></td>
+      <td><%= @item.updated_at.strftime('%m-%d-%Y') %></td>
+      <td>
+        <%= link_to 'Edit', edit_item_path(@item), class: 'ui primary basic button'%>
+        <%= link_to 'Delete', delete_item_path(@item), class: 'ui negative basic button'%>
+
+      </td>
+    </tr>
+  </table>
+</div>

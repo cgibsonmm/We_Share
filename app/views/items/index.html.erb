@@ -1,20 +1,36 @@
 <div class="index-page">
-  <table id="index" class="ui table">
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Updated at</th>
-      <th>Options</th>
-    </tr>
+  <h2>Listed Items</h2>
+  <h4><%= @total_items %> items in Database</h4>
+  <%= link_to '<i class="add circle icon"></i>New Item'.html_safe, new_item_path, class: 'new-link' %>
+  <table id="index" class="ui red striped table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Updated</th>
+        <th>Options</th>
+      </tr>
+    </thead>
     <% @items.each do |item| %>
-    <tr>
+    <tr class="selectable">
       <td><%= item.name %></td>
       <td><%= item.item_type %></td>
       <td><%= item.item_description %></td>
-      <td><%= item.updated_at %></td>
-      <td class="selectable box"><%= link_to 'Show', item_path(item) %></td>
+      <td><%= item.updated_at.strftime('%m-%d-%Y') %></td>
+      <td>
+
+        <%= link_to 'Show', item_path(item), class: 'ui primary basic button'%>
+      </td>
     </tr>
     <% end %>
+    <tfoot>
+      <tr>
+        <th colspan="5">
+          <%= will_paginate @items, renderer: WillPaginateSemanticUi::ActionView::Renderer, class: 'right floated', inner_window: '1', outer_window: '0' %>
+        </th>
+      </tr>
+    </tfoot>
   </table>
+
 </div>

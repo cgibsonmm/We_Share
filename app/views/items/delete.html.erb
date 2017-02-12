@@ -1,2 +1,14 @@
-<h1>Items#delete</h1>
-<p>Find me in app/views/items/delete.html.erb</p>
+<div class="delete-page">
+  <h2>Delete <%= @item.name %></h2>
+
+  <%= link_to '<i class="arrow left icon"></i>Items'.html_safe, items_path %>
+  <br/>
+  <br/>
+
+  <p>Are you sure you want to delete this item?</p>
+
+  <%= form_for @item, method: 'delete' do |f| %>
+
+  <% f.submit 'Delete', class: 'ui negative button' %>
+  <% end  %>
+</div>

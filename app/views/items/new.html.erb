@@ -1,2 +1,27 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<div class="new-page">
+  <h2>List New Item</h2>
+  <%= link_to '<i class="arrow left icon"></i>Items'.html_safe, items_path %>
+
+  <%= form_for @item, html: {class: 'ui form'} do |f| %>
+
+    <h4 class="ui dividing header">New Item</h4>
+
+    <div class="required field">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Item' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :item_type %>
+      <%= f.select :item_type, options_for_select, {},{class: 'ui fluid dropdown'} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :item_description %>
+      <%= f.text_area :item_description, placeholder: 'Short description' %>
+    </div>
+
+    <%= f.submit 'Add Item', class: 'ui button' %>
+
+  <% end %>
+</div>

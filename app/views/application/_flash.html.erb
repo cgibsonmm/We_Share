@@ -1,0 +1,17 @@
+<% if !flash[:error].blank? %>
+  <div class='ui negative message three column centered grid'>
+    <div class="header">
+        <%= flash[:notice] %>
+    </div>
+  </div><br/>
+</br/>
+<% end %>
+
+<% if !flash[:notice].blank? %>
+  <div class='ui positive message three column centered grid'>
+    <div class="header">
+        <%= flash[:notice] %>
+    </div>
+  </div><br/>
+</br/>
+<% end %>
