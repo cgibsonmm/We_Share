@@ -1,0 +1,30 @@
+
+  <%= link_to '<i class="arrow left icon"></i>Items'.html_safe, items_path %>
+
+  <%= form_for @item, html: {class: 'ui form', multipart: true} do |f| %>
+
+    <h4 class="ui dividing header"><%= @title %></h4>
+
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image%>
+    </div>
+
+    <div class="required field">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Item' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :item_type %>
+      <%= f.select :item_type, options_for_select, {},{class: 'ui fluid dropdown'} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :item_description %>
+      <%= f.text_area :item_description, placeholder: 'Short description' %>
+    </div>
+
+    <%= f.submit 'Submit', class: 'ui button' %>
+
+  <% end %>

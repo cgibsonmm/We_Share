@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :count_items, only: [:index]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @items = Item.sorted.paginate(page: params[:page], per_page: 10)
@@ -54,7 +55,7 @@ class ItemsController < ApplicationController
   private
 
   def item_basic_params
-    params.require(:item).permit(:name, :item_type, :item_description)
+    params.require(:item).permit(:name, :item_type, :item_description, :image)
   end
 
   def count_items

@@ -1,6 +1,9 @@
 <div class="show-page">
   <h2><%= @item.name %></h2>
-  <%= link_to '<i class="arrow left icon"></i>Items'.html_safe, items_path %>
+  <%= link_to '<i class="arrow left icon"></i>Items'.html_safe, items_path %><br/>
+
+  <%= show_image(@item) %>
+
   <table id="index" class="ui red striped celled table">
     <thead>
       <tr>

@@ -5,9 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# sematic for styles
+# use sematic for styles
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
-# Pagination
+# Use pagination
 gem 'will_paginate'
 # Pagination and sematic
 gem "will_paginate_semantic_ui"
@@ -39,8 +39,11 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# Devise for auth
+
+# Use devise for user auth
 gem 'devise'
+# Use paperclip photo upload
+gem 'paperclip', '~> 5.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,5 +60,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  # Use pg for deployment to heroku
+  gem 'pg'
+end 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
