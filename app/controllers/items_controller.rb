@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :count_items, only: [:index]
+  before_action :item_owner?, only: [:edit]
   before_action :authenticate_user!, except: [:index]
 
   def index
@@ -60,5 +61,13 @@ class ItemsController < ApplicationController
 
   def count_items
     @total_items = Item.all.count
+  end
+
+  def item_owner?
+    @item = Item.find(params[:id])
+    unless user_signed_in? && @item.user_id == current_user.id
+      flash[:notice] = "You do not own this item"
+      render 'show'
+    end
   end
 end

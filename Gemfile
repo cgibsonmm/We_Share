@@ -63,6 +63,7 @@ end
 group :production do
   # Use pg for deployment to heroku
   gem 'pg'
+  gem 'aws-sdk', '~> 2.3'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
