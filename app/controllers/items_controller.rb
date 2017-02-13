@@ -8,11 +8,11 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item = current_user.items.build
   end
 
   def create
-    @item = Item.new(item_basic_params)
+    @item = current_user.items.build(item_basic_params)
     if @item.save
       flash[:notice] = "#{@item.name} Successfully created"
       redirect_to items_path
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
   private
 
   def item_basic_params
-    params.require(:item).permit(:name, :item_type, :item_description, :image)
+    params.require(:item).permit(:user_id, :name, :item_type, :item_description, :image)
   end
 
   def count_items
