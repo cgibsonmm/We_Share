@@ -2,7 +2,7 @@
   <h2>Listed Items</h2>
   <h4><%= @total_items %> items in Database</h4>
   <%= link_to '<i class="add circle icon"></i>New Item'.html_safe, new_item_path, class: 'new-link' %>
-  <table id="index" class="ui red striped table">
+  <table id="index" class="ui table">
     <thead>
       <tr>
         <th>Name</th>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <% @items.each do |item| %>
-    <tr class="selectable">
+    <tr>
       <td><%= item.name %></td>
       <td><%= item.item_type %></td>
       <td><%= item.item_description %></td>

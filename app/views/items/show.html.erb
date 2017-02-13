@@ -15,9 +15,8 @@
       <td><%= @item.item_description %></td>
       <td><%= @item.updated_at.strftime('%m-%d-%Y') %></td>
       <td>
-        <%= link_to 'Edit', edit_item_path(@item), class: 'ui primary basic button'%>
-        <%= link_to 'Delete', delete_item_path(@item), class: 'ui negative basic button'%>
-
+          <%= link_to 'Edit', edit_item_path(@item), class: 'ui primary basic button'%>
+          <%= link_to 'Delete', delete_item_path(@item), class: 'ui negative basic button'%>
       </td>
     </tr>
   </table>

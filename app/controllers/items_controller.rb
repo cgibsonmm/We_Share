@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
       flash[:notice] = "#{@item.name} Successfully created"
       redirect_to items_path
     else
-      flash.now[:error] = @item.errors.full_messages.to_sentence
+      flash.now[:alert] = @item.errors.full_messages.to_sentence
       render 'new'
     end
   end
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
       flash[:notice] = "#{@item.name} Successfully Update"
       redirect_to (item_path(@item))
     else
-      flash[:error] = "Error updating"
+      flash[:alert] = "Error updating"
       render 'edit'
     end
   end
