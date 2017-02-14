@@ -10,9 +10,10 @@ Rails.application.configure do
     bucket: ENV.fetch('S3_BUCKET_NAME'),
     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
     secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-    s3_region: ENV.fetch('AWS_REGION'),
+    s3_region: ENV.fetch('AWS_REGION')
   }
-  :s3_host_name => "s3-eu-west-2.amazonaws.com"
+  s3_host_name: "s3-eu-west-3.amazonaws.com", # Added entry
+  url: ":s3_host_name"                        # Added entry
 }
 
   # Eager load code on boot. This eager loads most of Rails and
