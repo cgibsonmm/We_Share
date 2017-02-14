@@ -39,7 +39,7 @@
         </div>
 
         <div class="actions">
-            <%= f.submit "Update", class: 'ui positive button' %>
+            <%= f.button 'Submit', class: 'ui positive button', data: {disable_with: "<div class='ui active tiny inline loader'></div> Editing"} %>
         </div>
         <% end %>
 

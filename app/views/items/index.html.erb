@@ -10,7 +10,7 @@
         <th>Type</th>
         <th>Owner</th>
         <th>Description</th>
-        <th>Updated</th>
+        <th>Avalible to Borrow</th>
         <th>Options</th>
       </tr>
     </thead>
@@ -21,7 +21,7 @@
       <td><%= item.item_type %></td>
       <td><%= item.user.username %></td>
       <td><%= item.item_description %></td>
-      <td><%= item.updated_at.strftime('%m-%d-%Y') %></td>
+      <td><%= "Placholder" %></td>
       <td>
 
         <%= link_to 'Show', item_path(item), class: 'ui primary basic button'%>

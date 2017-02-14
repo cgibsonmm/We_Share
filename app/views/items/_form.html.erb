@@ -25,6 +25,6 @@
       <%= f.text_area :item_description, placeholder: 'Short description' %>
     </div>
 
-    <%= f.submit 'Submit', class: 'ui button' %>
+    <%= f.button 'Submit', class: 'ui button', data: {disable_with: "<div class='ui active tiny inline loader'></div> Creating"} %>
 
   <% end %>

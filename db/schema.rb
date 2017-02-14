@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213201520) do
+ActiveRecord::Schema.define(version: 20170214222500) do
+
+  create_table "item_loans", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "from_user"
+    t.integer  "to_user"
+    t.boolean  "owner_confirmed_loan",          default: false
+    t.boolean  "owner_confirmed_loan_returned"
+    t.datetime "duration"
+    t.datetime "start_date"
+    t.datetime "checkedout_at"
+    t.datetime "due_at"
+    t.datetime "returned_at"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.string   "name",               null: false
