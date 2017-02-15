@@ -13,6 +13,7 @@
 #  image_file_size    :integer
 #  image_updated_at   :datetime
 #  user_id            :integer
+#  image              :string
 #
 
 require 'test_helper'
