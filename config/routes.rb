@@ -29,15 +29,6 @@
 #
 
 Rails.application.routes.draw do
-  get 'item_loans/index'
-
-  get 'item_loans/new'
-
-  get 'item_loans/edit'
-
-  get 'item_loans/show'
-
-  get 'item_loans/delete'
 
   devise_for :users
   root 'items#index'
@@ -47,6 +38,8 @@ Rails.application.routes.draw do
       get :delete
     end
   end
+
+  resources :item_loans
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

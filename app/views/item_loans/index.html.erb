@@ -1,2 +1,3 @@
-<h1>ItemLoans#index</h1>
-<p>Find me in app/views/item_loans/index.html.erb</p>
+<% @loans.each do |loan| %>
+<%= loan.from_user %>
+<% end  %>
