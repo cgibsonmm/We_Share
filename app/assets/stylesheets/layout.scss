@@ -1,0 +1,10 @@
+.button2{
+  color:red;
+  text-align:center;
+  border: 1px solid #df45c1;
+  display: block;
+
+  &:hover{
+    color:blue;
+  }
+}

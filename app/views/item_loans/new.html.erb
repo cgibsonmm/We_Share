@@ -1,4 +1,10 @@
-<%= form_for @loan do  %>
-<%= @item.name %>
-
-<% end  %>
+<h2>Request Loan of: <%= @item.name %></h2>
+<div class="fade">
+  <%= has_image?(@item) %>
+</div>
+<%= form_for @item_loan do |f| %>
+  <p>Item Owner: <%= @owner.username %></p>
+  <p>My username: <%= @user.username %></p>
+  <%= f.label :start_date %>
+  <%= f.text_field :start_date, class: 'datepicker' %>
+<% end %>

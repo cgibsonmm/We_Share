@@ -6,7 +6,7 @@
 #  item_id                       :integer
 #  from_user                     :integer
 #  to_user                       :integer
-#  owner_confirmed_loan          :boolean          default("f")
+#  owner_confirmed_loan          :boolean          default(FALSE)
 #  owner_confirmed_loan_returned :boolean
 #  duration                      :datetime
 #  start_date                    :datetime

@@ -21,7 +21,7 @@
       <td><%= item.item_type %></td>
       <td><%= item.user.username %></td>
       <td><%= item.item_description %></td>
-      <td><%= link_to 'Request Loan', new_item_loan_path(id: item.id) %></td>
+      <td><%= link_to 'Request Loan', new_item_item_loan_path(item, @item_loan) %></td>
       <td>
 
         <%= link_to 'Show', item_path(item), class: 'ui primary basic button'%>

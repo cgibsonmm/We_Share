@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     member do
       get :delete
     end
+    resources :item_loans, shallow: true
   end
 
   resources :item_loans

@@ -1,4 +1,8 @@
 class ItemLoansController < ApplicationController
+  before_action :find_item, only: [:new, :create]
+  before_action :find_owner, only: [:new, :create]
+  before_action :find_user, only: [:new, :create]
+
   def index
     @loans = ItemLoan.all
   end
@@ -8,8 +12,7 @@ class ItemLoansController < ApplicationController
   end
 
   def new
-    @item = Item.find(params[:id])
-    @loan = ItemLoan.new
+    @item_loan = ItemLoan.new
   end
 
   def create
@@ -28,6 +31,18 @@ class ItemLoansController < ApplicationController
   end
 
   private
+
+  def find_item
+    @item = Item.find(params[:item_id])
+  end
+
+  def find_owner
+    @owner = User.find(@item.user_id)
+  end
+
+  def find_user
+    @user = current_user
+  end
 
 
 end
